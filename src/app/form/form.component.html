@@ -1,0 +1,36 @@
+<form name="form" #f="ngForm" novalidate>
+
+  <div class="mb-3">
+    <label for="validationTextarea">Enter data below</label>
+    <textarea
+              class="form-control valid"
+              id="validationTextarea"
+              placeholder='e.x. [{ "name": "John", "age": 35, "isAdmin": false, "friends": [0,1,2,3] }] or [{ name: "John", age: 35, isAdmin: false, friends: [0,1,2,3] }]'
+              name="someText"
+              required
+              [(ngModel)]="someText2"
+              ></textarea>
+    <div
+        class="invalid-feedback text"
+        [style.display]="!f.form.valid?'block':'none'"
+        >
+      Please enter a message in the textarea.
+    </div>
+  </div>
+
+  <!-- <div class="form-group">
+    <label for="exampleFormControlFile1">If you have JSON file. Choose file, please!</label>
+    <input
+          type="file"
+          class="form-control-file choose-file"
+          id="exampleFormControlFile1"
+          >
+  </div> -->
+
+  <button [disabled]="!f.form.valid"
+          type="submit"
+          class="btn btn-primary"
+
+          (click) = "convert()">Continue
+        </button>
+</form>

@@ -1,0 +1,16 @@
+.valid {
+  border: 1px solid green;
+
+  &.ng-invalid {
+    border-color: red;
+  }
+}
+
+div .text {
+  display: none;
+}
+
+.choose-file{
+  outline: none;
+}
+

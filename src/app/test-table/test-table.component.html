@@ -1,0 +1,39 @@
+
+<div *ngIf="disabled">
+  <div class="table-wrap">
+  <table class="table table-sm mt-5">
+    <thead>
+      <tr>
+        <th scope="col"
+            *ngFor = "let key of keyz"
+            >{{key}}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of data; let idx = index">
+        <td *ngFor = "let key of keyz">
+          <input type="text"
+                  value={{item[key]}}
+                  [(ngModel)]="item[key]">
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <hr>
+  <button
+          type="submit "
+          class="btn btn-primary mr-2"
+          (click) = "upload()"
+          >
+          Unload
+  </button>
+  <button
+          type="submit"
+          class="btn btn-primary ml-2"
+          (click) = "clearTable()"
+          >
+          Clear table
+  </button>
+ </div>
+</div>
