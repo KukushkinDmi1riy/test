@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, OnChanges, Output, EventEmitter } from '@angular/core';
-import { ArrOfObj } from '../models';
+import { ArrOfObj } from '../../models';
 
 
 @Component({
@@ -34,9 +34,9 @@ export class TestTableComponent implements OnInit, OnChanges {
   }
 
 
-  clearTable() {
-    this.data = null;
-  }
+  // clearTable() {
+  //   this.data = null;
+  // }
 
 
 

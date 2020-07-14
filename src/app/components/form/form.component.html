@@ -1,20 +1,21 @@
-<form name="form" #f="ngForm" novalidate>
+<form  [formGroup] = "form" (ngSubmit)="convert()">
 
   <div class="mb-3">
     <label for="validationTextarea">Enter data below</label>
     <textarea
+              type="text"
+              formControlName ="jsonForm"
               class="form-control valid"
               id="validationTextarea"
               placeholder='e.x. [{ "name": "John", "age": 35, "isAdmin": false, "friends": [0,1,2,3] }] or [{ name: "John", age: 35, isAdmin: false, friends: [0,1,2,3] }]'
               name="someText"
-              required
+
               [(ngModel)]="someText2"
+
               ></textarea>
-    <div
-        class="invalid-feedback text"
-        [style.display]="!f.form.valid?'block':'none'"
-        >
-      Please enter a message in the textarea.
+    <div *ngIf="form.get('jsonForm').invalid && form.get('jsonForm').touched">
+      <small *ngIf="form.get('jsonForm').errors.required">The field must not be empty</small>
+      <small *ngIf="form.get('jsonForm').errors.jsonParse">It is not JSON</small>
     </div>
   </div>
 
@@ -27,10 +28,10 @@
           >
   </div> -->
 
-  <button [disabled]="!f.form.valid"
-          type="submit"
-          class="btn btn-primary"
-
-          (click) = "convert()">Continue
-        </button>
+  <button
+        type="submit"
+        class="btn btn-primary"
+        [disabled]="form.invalid"
+        >Continue
+  </button>
 </form>

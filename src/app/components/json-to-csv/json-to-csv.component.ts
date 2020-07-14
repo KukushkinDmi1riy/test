@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
-import { DataService } from '../services/data.service'
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-json-to-csv',

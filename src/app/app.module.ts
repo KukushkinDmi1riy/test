@@ -1,12 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { FormComponent } from './form/form.component';
-import { TestTableComponent } from './test-table/test-table.component';
-import { ResultComponent } from './result/result.component';
-import { JsonToCSVComponent } from './json-to-csv/json-to-csv.component';
+import { FormComponent } from './components/form/form.component';
+import { TestTableComponent } from './components/test-table/test-table.component';
+import { ResultComponent } from './components/result/result.component';
+import { JsonToCSVComponent } from './components/json-to-csv/json-to-csv.component';
 
 
 @NgModule({
@@ -19,7 +19,8 @@ import { JsonToCSVComponent } from './json-to-csv/json-to-csv.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
